@@ -1,4 +1,4 @@
-public class VoiceAnalyzer
+public class VoiceAnalyzer : ILieDetector
 {
     public bool IsLying(string suspectStatement)
     {

@@ -16,8 +16,14 @@
         // consoleMission.RunMission("Attack Mission");
 
         // 2
-        TerroristInterrogationUnit unit = new TerroristInterrogationUnit();
-        unit.Interrogate("I did not lie.");
-        unit.Interrogate("I'm being honest!");
+        ILieDetector voiceAnalyzer = new VoiceAnalyzer();
+        TerroristInterrogationUnit unit1 = new TerroristInterrogationUnit(voiceAnalyzer);
+        unit1.Interrogate("I did not lie.");
+        unit1.Interrogate("I'm being honest!");
+
+        ILieDetector thermalScanner = new ThermalScanner();
+        TerroristInterrogationUnit unit2 = new TerroristInterrogationUnit(thermalScanner);
+        unit2.Interrogate("It is too hot here, i'm full of sweat!");
+        unit2.Interrogate("Me? A liar? Hahaha!");
     }
 }
