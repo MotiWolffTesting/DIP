@@ -1,8 +1,17 @@
 ﻿class Program
 {
+
+    // 1
     static void Main(string[] args)
     {
-        MissionController controller = new MissionController();
-        controller.RunMission("Rescue Mission");
+        // Using FileLogger
+        ILogger fileLogger = new FileLogger();
+        MissionController fileMission = new MissionController(fileLogger);
+        fileMission.RunMission("Rescue Mission");
+
+        // Using ConsoleLogger
+        ILogger consoleLogger = new ConsoleLogger();
+        MissionController consoleMission = new MissionController(consoleLogger);
+        consoleMission.RunMission("Attack Mission");
     }
 }

@@ -1,7 +1,11 @@
 public class MissionController
 {
-    private FileLogger logger = new FileLogger();
+    private readonly ILogger logger;
 
+    public MissionController(ILogger logger)
+    {
+        this.logger = logger;
+    }
     public void RunMission(string missionName)
     {
         // Simulate mission]

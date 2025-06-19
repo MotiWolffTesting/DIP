@@ -1,4 +1,4 @@
-public class FileLogger
+public class FileLogger : ILogger
 {
     public void Log(string message)
     {
