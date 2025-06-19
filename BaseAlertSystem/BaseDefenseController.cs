@@ -1,7 +1,11 @@
 public class BaseDefenseController
 {
-    private SirenAlert alert = new SirenAlert();
+    private readonly IAlert alert;
 
+    public BaseDefenseController(IAlert alert)
+    {
+        this.alert = alert;
+    }
     public void OnThreatDetected()
     {
         Console.WriteLine("Threat detected.");

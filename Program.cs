@@ -27,7 +27,12 @@
         // unit2.Interrogate("Me? A liar? Hahaha!");
 
         // 3
-        BaseDefenseController baseDefense = new BaseDefenseController();
-        baseDefense.OnThreatDetected();
+        IAlert siren = new SirenAlert();
+        BaseDefenseController controller1 = new BaseDefenseController(siren);
+        controller1.OnThreatDetected();
+
+        IAlert drone = new DroneDispatchAlert();
+        BaseDefenseController controller2 = new BaseDefenseController(drone);
+        controller2.OnThreatDetected();
     }
 }

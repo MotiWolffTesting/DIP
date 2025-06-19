@@ -1,4 +1,4 @@
-public class SirenAlert
+public class SirenAlert : IAlert
 {
     public void Alert()
     {
