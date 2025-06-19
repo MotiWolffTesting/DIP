@@ -1,10 +1,15 @@
 public class TerroristInterrogationUnit
 {
-    private VoiceAnalyzer voiceAnalyzer = new VoiceAnalyzer();
+    private readonly ILieDetector lieDetector;
+
+    public TerroristInterrogationUnit(ILieDetector lieDetector)
+    {
+        this.lieDetector = lieDetector;
+    }
 
     public void Interrogate(string suspectStatement)
     {
-        bool isLying = voiceAnalyzer.IsLying(suspectStatement);
+        bool isLying = lieDetector.IsLying(suspectStatement);
         if (isLying)
         {
             Console.WriteLine("Suspect is lying!");
