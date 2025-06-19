@@ -1,5 +1,7 @@
 ﻿class Program
 {
+
+    // 1
     static void Main(string[] args)
     {
         // Using FileLogger
